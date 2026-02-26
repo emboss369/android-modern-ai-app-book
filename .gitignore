@@ -1,3 +1,5 @@
+# Ignore any 'chapters' directories anywhere in the repo
+**/chapters/**
 # Gradle files
 .gradle/
 build/
