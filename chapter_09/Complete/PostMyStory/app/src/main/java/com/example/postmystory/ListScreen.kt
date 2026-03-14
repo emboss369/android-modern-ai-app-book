@@ -11,9 +11,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.Info
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -23,6 +20,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -38,7 +36,7 @@ fun ListScreen(
     floatingActionButton = {
       FloatingActionButton(onClick = onClick) {
         Icon(
-          imageVector = Icons.Default.Add,
+          painter = painterResource(R.drawable.add_24px),
           contentDescription = "Add a new post"
         )
       }
@@ -56,7 +54,7 @@ fun ListScreen(
           modifier = Modifier.padding(32.dp)
         ) {
           Icon(
-            imageVector = Icons.Default.Info,
+            painter = painterResource(R.drawable.info_24px),
             contentDescription = null,
             modifier = Modifier.size(64.dp),
             tint = Color.LightGray
