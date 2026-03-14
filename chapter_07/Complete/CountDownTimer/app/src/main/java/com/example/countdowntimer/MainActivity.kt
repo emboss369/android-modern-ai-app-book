@@ -11,16 +11,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Alarm
-import androidx.compose.material.icons.filled.Favorite
-import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Menu
-import androidx.compose.material.icons.filled.Person
-import androidx.compose.material.icons.filled.Timer
-import androidx.compose.material.icons.outlined.PlusOne
-import androidx.compose.material.icons.outlined.Timer10Select
-import androidx.compose.material.icons.outlined.Timer3Select
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
@@ -42,6 +32,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -82,7 +73,7 @@ fun TopBar(
     navigationIcon = {
       IconButton(onClick = { /*TODO*/ }) {
         Icon(
-          imageVector = Icons.Filled.Timer,
+          painter = painterResource(R.drawable.timer_24px),
           contentDescription = "Timer"
         )
       }
@@ -90,13 +81,13 @@ fun TopBar(
     actions = {
       IconButton(onClick = { iconOnClick(3) }) {
         Icon(
-          imageVector = Icons.Outlined.Timer3Select,
+          painter = painterResource(R.drawable.timer_3_select_24px),
           contentDescription = "Timer3Select"
         )
       }
       IconButton(onClick = { iconOnClick(10) }) {
         Icon(
-          imageVector = Icons.Outlined.Timer10Select,
+          painter = painterResource(R.drawable.timer_10_select_24px),
           contentDescription = "Timer10Select"
         )
       }
@@ -118,7 +109,7 @@ fun BottomBar(
     actions = {
       IconButton(onClick = { iconOnClick(60) }) {
         Icon(
-          imageVector = Icons.Outlined.PlusOne,
+          painter = painterResource(R.drawable.exposure_plus_1_24px),
           contentDescription = "PlusOne"
         )
       }
@@ -145,7 +136,8 @@ fun ExampleScaffold(viewModel: ExampleViewModel = viewModel()) {
     floatingActionButton = {
       FloatingActionButton(onClick = toggleTimer, content = {
         Icon(
-          imageVector = Icons.Filled.Timer, contentDescription = "Timer"
+          painter = painterResource(R.drawable.timer_24px),
+          contentDescription = "Timer"
         )
       })
     },
@@ -202,23 +194,23 @@ fun ExampleScaffoldPreview() {
 @Composable
 fun ExampleScaffold_() {
   Scaffold(
-    topBar = { Text("TopAppBar") }, // ❶
-    bottomBar = { Text("BottomAppBar") }, // ❷
+    topBar = { Text("TopAppBar") },
+    bottomBar = { Text("BottomAppBar") },
     floatingActionButton = {
       FloatingActionButton(
-        onClick = { /*TODO*/ }, // ❸
+        onClick = { /*TODO*/ },
         content = {
           Icon(
-            imageVector = Icons.Filled.Timer, // ❹
+            painter = painterResource(R.drawable.timer_24px),
             contentDescription = "Timer"
           )
         }
       )
     },
-    content = { innerPadding -> // ❺
+    content = { innerPadding ->
       Box(
         modifier = Modifier
-          .padding(innerPadding) // ❻
+          .padding(innerPadding)
           .fillMaxSize()
           .background(color = Pink80),
         contentAlignment = Alignment.Center
@@ -243,14 +235,23 @@ fun TopAppBarExample() {
 
   TopAppBar(title = { Text("Example TopAppBar") }, navigationIcon = {
     IconButton(onClick = { /*TODO: Handle navigation icon click*/ }) {
-      Icon(Icons.Filled.Menu, contentDescription = "Navigation Menu")
+      Icon(
+        painter = painterResource(R.drawable.menu_24px),
+        contentDescription = "Navigation Menu"
+      )
     }
   }, actions = {
     IconButton(onClick = { /*TODO*/ }) {
-      Icon(Icons.Filled.Favorite, contentDescription = "Favorite")
+      Icon(
+        painter = painterResource(R.drawable.favorite_24px),
+        contentDescription = "Favorite"
+      )
     }
     IconButton(onClick = { /*TODO*/ }) {
-      Icon(Icons.Filled.Alarm, contentDescription = "Alarm")
+      Icon(
+        painter = painterResource(R.drawable.timer_24px),
+        contentDescription = "Alarm"
+      )
     }
   })
 }
@@ -259,7 +260,11 @@ fun TopAppBarExample() {
 fun BottomAppBarWithTabs() {
   var selectedTabIndex by remember { mutableIntStateOf(0) }
   val tabs = listOf("Home", "Favorites", "Profile")
-  val icons = listOf(Icons.Filled.Home, Icons.Filled.Favorite, Icons.Filled.Person)
+  val icons = listOf(
+    R.drawable.home_24px,
+    R.drawable.favorite_24px,
+    R.drawable.person_24px
+  )
 
   BottomAppBar(
     containerColor = MaterialTheme.colorScheme.surfaceContainer,
@@ -282,7 +287,10 @@ fun BottomAppBarWithTabs() {
             modifier = Modifier.padding(vertical = 12.dp, horizontal = 16.dp),
             verticalAlignment = Alignment.CenterVertically
           ) {
-            Icon(icons[index], contentDescription = null)
+            Icon(
+              painter = painterResource(icons[index]),
+              contentDescription = null
+            )
             Spacer(modifier = Modifier.width(8.dp))
             Text(
               text = title,
