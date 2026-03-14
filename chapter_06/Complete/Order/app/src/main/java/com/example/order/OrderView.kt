@@ -15,8 +15,6 @@ import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowDropDown
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Checkbox
@@ -42,6 +40,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -240,9 +239,11 @@ fun DrinkSelectionSection() {
             .clickable { expanded = true },  // ❹
           trailingIcon = {
             Icon(
-              Icons.Filled.ArrowDropDown, "dropdown",
-              Modifier.clickable { expanded = true },
-              tint = AccentGreen)            // ❺
+              painter = painterResource(R.drawable.arrow_drop_down_24px),
+              contentDescription = "dropdown",
+              modifier = Modifier.clickable { expanded = true }, // ❺
+              tint = AccentGreen
+            )
           },
           label = { Text("ドリンク") },
           readOnly = true,                   // ❻
