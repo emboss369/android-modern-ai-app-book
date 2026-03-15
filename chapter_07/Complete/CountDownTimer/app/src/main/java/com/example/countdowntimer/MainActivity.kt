@@ -71,12 +71,10 @@ fun TopBar(
       )
     },
     navigationIcon = {
-      IconButton(onClick = { /*TODO*/ }) {
-        Icon(
-          painter = painterResource(R.drawable.timer_24px),
-          contentDescription = "Timer"
-        )
-      }
+      Icon(
+        painter = painterResource(R.drawable.timer_24px),
+        contentDescription = "Timer"
+      )
     },
     actions = {
       IconButton(onClick = { iconOnClick(3) }) {
