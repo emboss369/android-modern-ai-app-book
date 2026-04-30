@@ -10,7 +10,11 @@ Android Studio と Kotlin を使用し、Jetpack Compose によるモダンUI開
 
 # 対応書籍
 
-Android実践入門 ― Gemini＆オンデバイスAIで作るモダンアプリ
+**Android実践入門 ― Gemini＆オンデバイスAIで作るモダンアプリ**
+
+- 発行: smartphone-zine.com
+- 著者: 金田浩明
+- ©2026 金田浩明
 
 ---
 
@@ -51,9 +55,9 @@ git clone https://emboss369/android-modern-ai-app-book.git
 
 各書籍バージョンに対応するコードは Git tag で管理されています。
 
-| 書籍    | Tag    |
-| ----- | ------ |
-| 初版第1刷 | v1.0.0 |
+| 書籍    | バージョン | 発売日 | Tag |
+| ----- | ------ | ------ | ------ |
+| 第1.0 版 | 1.0 | 2026年4月30日 | v1.0.0 |
 
 ---
 
