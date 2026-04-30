@@ -1,7 +1,7 @@
-# Android実践入門 ― Gemini＆オンデバイスAIで作るモダンアプリ サンプルコード
+# Android間発実践入門 Gemini＆オンデバイスAIで作るモダンアプリ サンプルコード
 
 本リポジトリは、書籍
-「Android実践入門 ― Gemini＆オンデバイスAIで作るモダンアプリ」
+「Android間発実践入門 Gemini＆オンデバイスAIで作るモダンアプリ」
 の公式サンプルコードを提供するものです。
 
 Android Studio と Kotlin を使用し、Jetpack Compose によるモダンUI開発、Gemini API の活用、オンデバイスAIの実装など、最新のAndroidアプリ開発技術を実践的に学ぶことができます。
@@ -10,7 +10,7 @@ Android Studio と Kotlin を使用し、Jetpack Compose によるモダンUI開
 
 # 対応書籍
 
-**Android実践入門 ― Gemini＆オンデバイスAIで作るモダンアプリ**
+**Android間発実践入門 Gemini＆オンデバイスAIで作るモダンアプリ**
 
 - 発行: smartphone-zine.com
 - 著者: 金田浩明
